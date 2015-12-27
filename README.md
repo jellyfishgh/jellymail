@@ -31,3 +31,9 @@ $ git push sinacloud master:1
 ## 相关文档
 
 - [NodeJS应用部署指南](http://www.sinacloud.com/doc/sc2/nodejs-getting-started.html)
+
+## 学习
+- [Git分支管理策略](http://www.ruanyifeng.com/blog/2012/07/git.html)
+- [Git远程操作详解](http://www.ruanyifeng.com/blog/2014/06/git_remote.html)
+- [Git 使用规范流程](http://www.ruanyifeng.com/blog/2015/08/git-use-process.html?utm_source=tuicool)
+- [常用 Git 命令清单](http://www.ruanyifeng.com/blog/2015/12/git-cheat-sheet.html)
