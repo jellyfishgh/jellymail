@@ -37,3 +37,6 @@ $ git push sinacloud master:1
 - [Git远程操作详解](http://www.ruanyifeng.com/blog/2014/06/git_remote.html)
 - [Git 使用规范流程](http://www.ruanyifeng.com/blog/2015/08/git-use-process.html)
 - [常用 Git 命令清单](http://www.ruanyifeng.com/blog/2015/12/git-cheat-sheet.html)
+- [Writing middleware for use in Express apps](http://expressjs.com/en/guide/writing-middleware.html)
+- [Express 4.x API](http://expressjs.com/en/4x/api.html)
+- [Express @ GitHub](https://github.com/strongloop/express)
