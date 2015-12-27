@@ -35,5 +35,5 @@ $ git push sinacloud master:1
 ## 学习
 - [Git分支管理策略](http://www.ruanyifeng.com/blog/2012/07/git.html)
 - [Git远程操作详解](http://www.ruanyifeng.com/blog/2014/06/git_remote.html)
-- [Git 使用规范流程](http://www.ruanyifeng.com/blog/2015/08/git-use-process.html?utm_source=tuicool)
+- [Git 使用规范流程](http://www.ruanyifeng.com/blog/2015/08/git-use-process.html)
 - [常用 Git 命令清单](http://www.ruanyifeng.com/blog/2015/12/git-cheat-sheet.html)
