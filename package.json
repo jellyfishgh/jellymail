@@ -8,12 +8,13 @@
     "email": "saemail@sina.cn"
   },
   "dependencies": {
+    "ejs": "^2.3.4",
     "express": "^4.13.3"
   },
   "engines": {
     "node": "0.10.36"
   },
   "scripts": {
-    "start": "node index.js"
+    "start": "node app.js"
   }
 }
