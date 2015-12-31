@@ -1,3 +1,28 @@
-<%= include header.ejs %>
-hello world
-<%= include footer.ejs %>
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <% include ../partials/head %>
+</head>
+
+<body class="container">
+    <header>
+        <% include ../partials/header %>
+    </header>
+    <main>
+        <div class="jumbotron">
+            <h1>This is great</h1>
+            <p>Welcome to templating using EJS</p>
+        </div>
+        <ul>
+            <% for(var i = 0; i < list.length; i++) { %>
+                <li><a href='index'><%= list[i] %></a></li>
+            <% } %>
+        </ul>
+    </main>
+    <footer>
+        <% include ../partials/footer %>
+    </footer>
+</body>
+
+</html>

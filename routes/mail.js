@@ -7,8 +7,9 @@ router.use('/', function (req, res, next) {
         if(err) res.end('404');
         //data:buffer
         res.render('pages/mail', {
-            "title": "邮件列表"
-            // "mails": data.toString().split("\r\n")
+            "title": "邮件列表",
+            "thisYear": new Date().getFullYear(),
+            "mails": data.toString().split("\r\n")
         });
     });
 });

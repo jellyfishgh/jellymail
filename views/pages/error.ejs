@@ -1,7 +1,22 @@
-<%= include header.ejs %>
+<!DOCTYPE html>
+<html lang="en">
 
-<h1><%= message %></h1>
-<h2><%= error.status %></h2>
-<pre><%= error.stack %></pre>
+<head>
+    <% include ../partials/head %>
+</head>
 
-<%= include footer.ejs %>
+<body class="conatiner">
+    <h1>
+        <%= message %>
+    </h1>
+    <h2>
+        <%= error.status %>
+    </h2>
+    <pre>
+        <%= error.stack %>
+    </pre>
+    <footer>
+        <% include ../partials/footer %<
+    </footer>
+</body>
+</html>

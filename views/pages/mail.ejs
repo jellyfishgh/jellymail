@@ -1,5 +1,24 @@
-<%= include header.ejs %>
+<!DOCTYPE html>
+<html lang="zh">
 
-<p>test</p>
+<head>
+    <% include ../partials/head %>
+</head>
 
-<%= include footer.ejs %>
+<body class="container">
+    <header>
+        <% include ../partials/header %>
+    </header>
+    <main>
+        <ul>
+            <% mails.forEach(function(mail){ %>
+                <li><%= mail %></li>
+            <% }); %>
+        </ul>
+    </main>
+    <footer>
+        <% include ../partials/footer %>
+    </footer>
+</body>
+
+</html>

@@ -4,7 +4,6 @@ var app = express();
 //模板渲染引擎
 app.set('view engine', 'ejs');
 app.set('views', __dirname + '/views');
-console.log('dirname:', __dirname);
 
 // 托管静态文件
 app.use('/static', express.static('public'));
@@ -20,7 +19,7 @@ app.use('/user', user);
 app.use('/mail', mail);
 app.use('/error', error);
 
-var server = app.listen(process.env.PORT || 5050, function () {
+var server = app.listen(process.env.PORT || 5050, function() {
     var host = server.address().address;
     var port = server.address().port;
     console.log("app listening at http://%s:%s", host, port);

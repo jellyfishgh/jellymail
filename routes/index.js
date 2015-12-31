@@ -2,7 +2,15 @@ var express = require('express');
 var router = express.Router();
 
 router.get('/', function(req, res, next){
-    res.render('pages/index')
+    var list = [
+        "mail",
+        "error"
+    ];
+    res.render('pages/index', {
+        "title": 'index',
+        "thisYear": new Date().getFullYear(),
+        "list":list
+    });
 });
 
 module.exports = router;
