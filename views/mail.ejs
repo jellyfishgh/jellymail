@@ -1,5 +1,7 @@
 <%= include header.ejs %>
 
-
+<% for(var i = 0; i < mails.length; i++) { %>
+    <li><%= mails[i] %></li>
+<% } %>
 
 <%= include footer.ejs %>
