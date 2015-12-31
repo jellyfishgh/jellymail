@@ -10,10 +10,12 @@ app.use('/static', express.static('public'));
 
 var index = require('./routes/index');
 var user = require('./routes/user');
+var mail = require('./routes/mail');
 
 app.use('/', index);
 app.use('/index', index);
 app.use('/user', user);
+app.use('/mail', mail);
 
 var server = app.listen(process.env.PORT || 5050, function () {
     var host = server.address().address;
