@@ -11,12 +11,14 @@ app.use('/static', express.static('public'));
 var index = require('./routes/index');
 var user = require('./routes/user');
 var mail = require('./routes/mail');
+var redis = require('./routes/redis');
 var error = require('./routes/error');
 
 app.use('/', index);
 app.use('/index', index);
 app.use('/user', user);
 app.use('/mail', mail);
+app.use('/redis', redis);
 app.use('/error', error);
 
 var server = app.listen(process.env.PORT || 5050, function() {

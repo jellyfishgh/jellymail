@@ -10,14 +10,7 @@
         <% include ../partials/header %>
     </header>
     <main>
-        <ul>
-            <% var sum = 0; %>
-            <% for(var key in mails){ %>
-                <p><%= mails[key].key %><span> = </span><%= mails[key].value %></p>
-                <% sum += mails[key].value %>
-            <% } %>
-            <% console.log(sum); %>
-        </ul>
+        <%= reply %>
     </main>
     <footer>
         <% include ../partials/footer %>

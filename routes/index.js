@@ -4,6 +4,8 @@ var router = express.Router();
 router.get('/', function(req, res, next){
     var list = [
         "mail",
+        "user",
+        "redis",
         "error"
     ];
     res.render('pages/index', {
