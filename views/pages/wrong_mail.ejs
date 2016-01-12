@@ -10,14 +10,13 @@
         <% include ../partials/header %>
     </header>
     <main>
-        <div class="jumbotron">
-            <h1>This is great</h1>
-            <p>Welcome to templating using EJS</p>
-        </div>
         <ul>
-            <% for(var i = 0; i < list.length; i++) { %>
-                <li><a href='<%= list[i] %>'><%= list[i] %></a></li>
+            <% var sum = 0; %>
+            <% for(var key in mails){ %>
+                <p><%= mails[key].key %><span> = </span><%= mails[key].value %></p>
+                <% sum += mails[key].value %>
             <% } %>
+            <% console.log(sum); %>
         </ul>
     </main>
     <footer>

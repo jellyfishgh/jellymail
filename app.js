@@ -11,6 +11,7 @@ app.use('/static', express.static('public'));
 var index = require('./routes/index');
 var user = require('./routes/user');
 var mail = require('./routes/mail');
+var wrong_mail = require('./routes/wrong_mail');
 var redis = require('./routes/redis');
 var error = require('./routes/error');
 
@@ -18,6 +19,7 @@ app.use('/', index);
 app.use('/index', index);
 app.use('/user', user);
 app.use('/mail', mail);
+app.use('/wrong_mail', wrong_mail);
 app.use('/redis', redis);
 app.use('/error', error);
 

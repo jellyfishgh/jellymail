@@ -4,6 +4,7 @@ var router = express.Router();
 router.get('/', function(req, res, next){
     var list = [
         "mail",
+        'wrong_mail',
         "user",
         "redis",
         "error"
