@@ -33,7 +33,7 @@ router.use('/', function(req, res, next) {
             array.sort(function(a, b) {
                 return b.value - a.value;
             });
-            res.render('pages/mail', {
+            res.render('pages/allmails', {
                 "title": "邮件列表",
                 "thisYear": new Date().getFullYear(),
                 "mails": array
