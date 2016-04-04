@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title><%= title %></title>
+    <link href="static/css/doctors_style.css" type="text/css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <% for(var i in doctors){ %>
+            <% var doctor = doctors[i]; %>
+            <div class="doctor">
+                <img src="static/img/doctors/<%= doctor.name %>/head.png"><span><%= doctor.name %></span>
+            </div>
+        <% } %>
+    </div>
+    <script src='static/lib/js/doctors_script.js'>
+</body>
+
+</html>

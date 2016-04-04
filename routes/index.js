@@ -6,7 +6,8 @@ router.get('/', function(req, res, next){
         "allmails",
         'mails',
         "redis",
-        "error"
+        "error",
+        "doctors"
     ];
     res.render('pages/index', {
         "title": 'index',

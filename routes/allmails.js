@@ -3,10 +3,15 @@ var router = express.Router();
 var fs = require('fs');
 
 router.use('/', function(req, res, next) {
-    fs.readFile("./public/data", function(err, data) {
+    fs.readFile("./public/mails.json", function(err, data) {
         if (err) res.end('404');
         //data:buffer
-        var arr = data.toString().trim().split("\r\n");
+        // var arr = data.toString().trim().split("\r\n");
+        var json = JSON.parse(data);
+        var arr = [];
+        for(var key in json){
+            arr = arr.concat(json[key]);
+        }
         console.log(arr.length);
         var obj = {};
         arr.forEach(function(item) {
