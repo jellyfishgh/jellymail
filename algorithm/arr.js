@@ -44,6 +44,17 @@ Array.prototype.reduce = function(combiner, initialValue) {
     }
     return [accumulatedValue];
 };
+Array.prototype.zip = function(right, combiner) {
+    return Array.zip(this, right, conbiner);
+}
+Array.zip = function(left, right, conbiner) {
+    var len = left.length > right.length ? right.length : right.length,
+        result = [];
+    for (var i = 0; i < len; i++) {
+        result.push(conbiner(left[i], right[i]));
+    }
+    return result;
+}
 
 
 console.log(JSON.stringify((function() {
@@ -98,11 +109,37 @@ console.log((function() {
     });
 })());
 
-console.log((function(){
+console.log((function() {
     var boxarts = data.boxarts;
-    return boxarts.reduce(function(cal, cur){
+    return boxarts.reduce(function(cal, cur) {
         return cal.width * cal.height > cur.width * cur.height ? cal : cur;
-    }).map(function(boxart){
+    }).map(function(boxart) {
         return boxart.url;
+    });
+})());
+
+console.log((function() {
+    var videos = data.videos;
+    return videos.reduce(function(accumulatedMap, video) {
+        var obj = {};
+        obj[video.id] = video.title;
+        return Object.assign(accumulatedMap, obj);
+    }, {});
+})());
+
+console.log((function() {
+    var movieLists1 = data.movieLists1;
+    return movieLists1.concatMap(function(movie) {
+        return movie.videos.concatMap(function(video) {
+            return video.boxarts.reduce(function(accumulatedValue, currentValue) {
+                return accumulatedValue.width * accumulatedValue.height > currentValue.width * currentValue.height ? currentValue : accumulatedValue;
+            }).map(function(boxart) {
+                return {
+                    id: video.id,
+                    title: video.title,
+                    url: boxart.url
+                };
+            });
+        });
     });
 })());
