@@ -160,7 +160,7 @@ console.log((function () {
     var movieLists = data.movieLists2;
     return movieLists.concatMap(function (movie) {
         return movie.videos.concatMap(function (video) {
-// http://reactivex.io/learnrx/
+            
         });
     });
 })());
