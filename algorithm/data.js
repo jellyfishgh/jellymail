@@ -171,7 +171,7 @@ module.exports = {
             height: 150,
             url: "http://cdn-0.nflximg.com/images/2891/Fracture425.jpg"
         }],
-    "videos": videos = [
+    "videos": [
         {
             "id": 65432445,
             "title": "The Chamber"
