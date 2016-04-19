@@ -173,10 +173,10 @@ console.log((function () {
 
 console.log((function () {
     var list = data.lists, videos = data.videos2;
-    return list.map(function (movie) {
+    return JSON.stringify(list.map(function (movie) {
         return {
-            name: movie.name,
-            videos: videos.filter(function (video) {
+            "name": movie.name,
+            "videos": videos.filter(function (video) {
                 return video.listId === movie.id;
             }).map(function (video) {
                 return {
@@ -185,5 +185,5 @@ console.log((function () {
                 }
             })
         };
-    });
+    }), null, '    ');
 })());
