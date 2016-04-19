@@ -249,7 +249,6 @@ module.exports = {
                     "boxarts": [
                         { width: 200, height: 200, url: "http://cdn-0.nflximg.com/images/2891/BadBoys200.jpg" },
                         { width: 140, height: 200, url: "http://cdn-0.nflximg.com/images/2891/BadBoys140.jpg" }
-
                     ],
                     "url": "http://api.netflix.com/catalog/titles/movies/70111470",
                     "rating": 5.0,
@@ -297,5 +296,37 @@ module.exports = {
                 }
             ]
         }
-    ]
+    ],
+    "videos2": [
+        {
+            "listId": 5434364,
+            "id": 65432445,
+            "title": "The Chamber"
+        },
+        {
+            "listId": 5434364,
+            "id": 675465,
+            "title": "Fracture"
+        },
+        {
+            "listId": 65456475,
+            "id": 70111470,
+            "title": "Die Hard"
+        },
+        {
+            "listId": 65456475,
+            "id": 654356453,
+            "title": "Bad Boys"
+        }
+    ],
+    "lists": [
+        {
+            "id": 5434364,
+            "name": "New Releases"
+        },
+        {
+            "id": 65456475,
+            "name": "Thrillers"
+        }
+    ],
 };

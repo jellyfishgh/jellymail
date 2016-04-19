@@ -160,7 +160,30 @@ console.log((function () {
     var movieLists = data.movieLists2;
     return movieLists.concatMap(function (movie) {
         return movie.videos.concatMap(function (video) {
-            
+            return video.boxarts.reduce(function (a, c) {
+                return a.width * a.height > c.width * c.height ? c : a;
+            }).zip(video.interestingMoments.filter(function (interestingMoment) {
+                return interestingMoment.type === 'Middle';
+            }), function (boxart, interestingMoment) {
+                return { id: video.id, title: video.title, time: interestingMoment.time, url: boxart.url };
+            });
         });
+    });
+})());
+
+console.log((function () {
+    var list = data.lists, videos = data.videos2;
+    return list.map(function (movie) {
+        return {
+            name: movie.name,
+            videos: videos.filter(function (video) {
+                return video.listId === movie.id;
+            }).map(function (video) {
+                return {
+                    id: video.id,
+                    title: video.title
+                }
+            })
+        };
     });
 })());
