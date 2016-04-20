@@ -187,3 +187,30 @@ console.log((function () {
         };
     }), null, '    ');
 })());
+
+console.log((function () {
+    var list = data.lists, videos = data.videos2, boxarts = data.boxarts2, bookmarks = data.bookmarks2;
+    return JSON.stringify(list.map(function (movie) {
+        return {
+            "name": movie.name,
+            "videos": videos.filter(function (video) {
+                return video.listId === movie.id;
+            }).concatMap(function (video) {
+                return boxarts.filter(function (boxart) {
+                    return boxart.videoId === video.id;
+                }).reduce(function (a, c) {
+                    return a.width * a.height > c.width * c.height ? c : a;
+                }).zip(bookmarks.filter(function (bookmark) {
+                    return bookmark.videoId === video.id;
+                }), function (boxart, bookmark) {
+                    return {
+                        id: video.id,
+                        title: video.title,
+                        url: boxart.url,
+                        time: bookmark.time
+                    }
+                });
+            })
+        };
+    }), null, '    ');
+})());
