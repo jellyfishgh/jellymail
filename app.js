@@ -11,7 +11,7 @@ app.use('/static', express.static('public'));
 var index = require('./routes/index');
 var allmails = require('./routes/allmails');
 var mails = require('./routes/mails');
-var redis = require('./routes/redis');
+// var redis = require('./routes/redis');
 var error = require('./routes/error');
 var doctors = require('./routes/doctors');
 
