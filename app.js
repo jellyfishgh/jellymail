@@ -19,7 +19,7 @@ app.use('/', index);
 app.use('/index', index);
 app.use('/allmails', allmails);
 app.use('/mails', mails);
-app.use('/redis', redis);
+// app.use('/redis', redis);
 app.use('/error', error);
 app.use('/doctors', doctors);
 
