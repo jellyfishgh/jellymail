@@ -6,3 +6,6 @@ https://scotch.io/tutorials/build-a-restful-api-using-node-and-express-4
 
 js mdn tutorial:
 https://developer.mozilla.org/zh-CN/docs/Web/JavaScript
+
+
+https://github.com/Reactive-Extensions/RxJS#the-need-to-go-reactive
