@@ -27,22 +27,22 @@ Array.prototype.concatMap = function (projectionFunctionThatReturnsArray) {
     }).concatAll();
 };
 Array.prototype.reduce = function (combiner, initialValue) {
-    var counter, accumulatedValue;
+    var counter, a;
     if (this.length === 0) return this;
     if (arguments.length === 1) {
         counter = 1;
-        accumulatedValue = this[0];
+        a = this[0];
     } else if (arguments.length >= 2) {
         counter = 0;
-        accumulatedValue = initialValue;
+        a = initialValue;
     } else {
         throw "Invalid arguments.";
     }
     while (counter < this.length) {
-        accumulatedValue = combiner(accumulatedValue, this[counter]);
+        a = combiner(a, this[counter]);
         counter++;
     }
-    return [accumulatedValue];
+    return [a];
 };
 
 Array.zip = function (left, right, conbiner) {
@@ -133,8 +133,8 @@ console.log((function () {
     var movieLists1 = data.movieLists1;
     return movieLists1.concatMap(function (movie) {
         return movie.videos.concatMap(function (video) {
-            return video.boxarts.reduce(function (accumulatedValue, currentValue) {
-                return accumulatedValue.width * accumulatedValue.height > currentValue.width * currentValue.height ? currentValue : accumulatedValue;
+            return video.boxarts.reduce(function (a, c) {
+                return a.width * a.height > c.width * c.height ? c : a;
             }).map(function (boxart) {
                 return {
                     id: video.id,
