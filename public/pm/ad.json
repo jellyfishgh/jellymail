@@ -1,0 +1,75 @@
+{
+    "baseUrl": "http://10.17.16.146/ad/",
+    "maxCount": 5,
+    "period": 2,
+    "remain": 2,
+    "html": {
+        "version": "0.0.1",
+        "md5": "2ccb79cedcd840e3f293ba7febcd85e3",
+        "src": "index.html"
+    },
+    "products": [
+        {
+            "id": "d10A",
+            "version": "0.0.1",
+            "deadline": "2016.06.15",
+            "imgs": [
+                {
+                    "src": "640_960.png",
+                    "md5": "37f8b3f9b66324665cb9f339901815e7"
+                },
+                {
+                    "src": "640_1136.png",
+                    "md5": "4abbdd19810eb2c7022185be4c9ff6e3"
+                },
+                {
+                    "src": "750_1134.png",
+                    "md5": "b325b99a5e56238b8d1a686cb81b237e"
+                },
+                {
+                    "src": "1242_2208.png",
+                    "md5": "51ef6fcb6150d6b4be377ffa8a73eb8c"
+                },
+                {
+                    "src": "1536_2048.png",
+                    "md5": "be155e3920a30e7f5f22dfce45f7982a"
+                },
+                {
+                    "src": "2048_1536.png",
+                    "md5": "fac5ed6e512e4d72a62d9293493bd14e"
+                }
+            ]
+        },
+        {
+            "id": "d10B",
+            "version": "0.0.1",
+            "deadline": "2016.07.01",
+            "imgs": [
+                {
+                    "src": "640_960.png",
+                    "md5": "7c5525e666ebebde39f44536fd603d76"
+                },
+                {
+                    "src": "640_1136.png",
+                    "md5": "92d109d1d13d32f061be83687b438454"
+                },
+                {
+                    "src": "750_1134.png",
+                    "md5": "5a93db298f58bcef52fae0eda73be760"
+                },
+                {
+                    "src": "1242_2208.png",
+                    "md5": "355eccb01bc5a17636e07c1602af9149"
+                },
+                {
+                    "src": "1536_2048.png",
+                    "md5": "4d80aca5cc82551e5bc48711758b9b9f"
+                },
+                {
+                    "src": "2048_1536.png",
+                    "md5": "4d9d6f12ec42c70143c07c817a36be0f"
+                }
+            ]
+        }
+    ]
+}
