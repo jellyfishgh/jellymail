@@ -11,43 +11,45 @@
         {
             "id": "d10A",
             "version": "0.0.1",
-            "deadline": "2016.06.15",
-            "count": 5,
+            "startTime": 1465056000,
+            "endTime": 0,
+            "limit": 4,
             "remain": 2,
+            "onlyme": 1,
             "device": {
                 "640_960": [
                     {
-                        "src": "640_960/bg.png",
+                        "src": "bg.png",
                         "md5": "37f8b3f9b66324665cb9f339901815e7"
                     }
                 ],
                 "640_1136": [
                     {
-                        "src": "640_1136/bg.png",
+                        "src": "bg.png",
                         "md5": "4abbdd19810eb2c7022185be4c9ff6e3"
                     }
                 ],
                 "750_1134": [
                     {
-                        "src": "750_1134/bg.png",
+                        "src": "bg.png",
                         "md5": "b325b99a5e56238b8d1a686cb81b237e"
                     }
                 ],
                 "1242_2208": [
                     {
-                        "src": "1242_2208/bg.png",
+                        "src": "bg.png",
                         "md5": "51ef6fcb6150d6b4be377ffa8a73eb8c"
                     }
                 ],
                 "1536_2048": [
                     {
-                        "src": "1536_2048/bg.png",
+                        "src": "bg.png",
                         "md5": "be155e3920a30e7f5f22dfce45f7982a"
                     }
                 ],
                 "2048_1536": [
                     {
-                        "src": "2048_1536/bg.png",
+                        "src": "bg.png",
                         "md5": "fac5ed6e512e4d72a62d9293493bd14e"
                     }
                 ]
@@ -56,43 +58,45 @@
         {
             "id": "d10B",
             "version": "0.0.1",
-            "deadline": "2016.07.01",
-            "count": 2,
+            "startTime": 1465488000,
+            "endTime": 1465488000,
+            "limit": -1,
             "remain": 3,
+            "onlyme": 0,
             "device": {
                 "640_960": [
                     {
-                        "src": "640_960/bg.png",
+                        "src": "bg.png",
                         "md5": "7c5525e666ebebde39f44536fd603d76"
                     }
                 ],
                 "640_1136": [
                     {
-                        "src": "640_1136/bg.png",
+                        "src": "bg.png",
                         "md5": "92d109d1d13d32f061be83687b438454"
                     }
                 ],
                 "750_1134": [
                     {
-                        "src": "750_1134/bg.png",
+                        "src": "bg.png",
                         "md5": "5a93db298f58bcef52fae0eda73be760"
                     }
                 ],
                 "1242_2208": [
                     {
-                        "src": "1242_2208/bg.png",
+                        "src": "bg.png",
                         "md5": "355eccb01bc5a17636e07c1602af9149"
                     }
                 ],
                 "1536_2048": [
                     {
-                        "src": "1536_2048/bg.png",
+                        "src": "bg.png",
                         "md5": "4d80aca5cc82551e5bc48711758b9b9f"
                     }
                 ],
                 "2048_1536": [
                     {
-                        "src": "2048_1536/bg.png",
+                        "src": "bg.png",
                         "md5": "4d9d6f12ec42c70143c07c817a36be0f"
                     }
                 ]
