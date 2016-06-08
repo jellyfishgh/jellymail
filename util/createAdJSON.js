@@ -17,6 +17,15 @@ var ad = {
 			"remain": 2,
 			"onlyme": 1,
 			"device": {}
+		},
+		"d10B": {
+			"version": 1,
+			"startTime": 1465056000,
+			"endTime": -1,
+			"limit": 4,
+			"remain": 2,
+			"onlyme": 1,
+			"device": {}
 		}
 	}
 };
@@ -71,5 +80,5 @@ function censor(key, value) {
 	else return value;
 }
 
-var filePath = 'D:\\xampp\\htdocs\\myphp\\ad\\d10';
+var filePath = 'D:\\xampp\\htdocs\\myphp\\ad\\d10B';
 exeFile(filePath);

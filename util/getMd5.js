@@ -1,7 +1,9 @@
 var fs = require('fs');
 var crypto = require('crypto');
 
-var filePath = "D:\\xampp\\htdocs\\myphp\\ad\\index.html";
+var file = process.argv.slice(2)[0];
+if(!file)file = "ad.json";
+var filePath = "D:\\xampp\\htdocs\\myphp\\ad\\" + file;
 
 var stream = fs.createReadStream(filePath);
 var md5Hash = crypto.createHash('md5');

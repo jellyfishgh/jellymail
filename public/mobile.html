@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>mobile</title>
+</head>
+<body>
+    <button id="btn">test</button>
+    <div id="msg"></div>
+    <script>
+        function showSize(){
+            var view =  window.screen.width + "," + window.screen.height;
+            var size = window.devicePixelRatio * window.screen.width + "," + window.devicePixelRatio * window.screen.height;
+            var ratio = window.devicePixelRatio;
+            var msgDiv = document.getElementById("msg");
+            msgDiv.appendChild(createP(size));
+            msgDiv.appendChild(createP(ratio));
+            msgDiv.appendChild(createP(view));
+            // alert(size);
+        }
+        function createP(txt){
+            var p = document.createElement("p");
+            p.appendChild(document.createTextNode(txt));
+            return p;
+        }
+        var btn = document.getElementById("btn");
+        btn.onclick = showSize;
+        // btn.ontouchend = showSize;
+    </script>
+</body>
+</html>
