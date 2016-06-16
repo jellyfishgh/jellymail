@@ -12,7 +12,7 @@ function createMailsJson(mailsFile) {
             var key = formatDate(now);
             obj[key] = value;
         }
-        fs.writeFile('./public/mails.json', JSON.stringify(obj, censor, '\t'), (err) => {
+        fs.writeFile('../public/mails.json', JSON.stringify(obj, censor, '\t'), (err) => {
             if (err) throw err;
             console.log("mails.json created");
         });
@@ -34,4 +34,4 @@ function formatDate(now) {
     return year + month + date;
 }
 
-createMailsJson('./public/mails');
+createMailsJson('../public/mails');

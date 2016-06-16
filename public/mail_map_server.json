@@ -34,12 +34,12 @@
     "@icloud.com": "https://www.icloud.com/",
     "@me.com": "https://www.icloud.com/",
     "@mac.com": "https://www.icloud.com/",
-    "@yahoo.com": "http://www.yahoo.com/",
-    "@yahoo.cn": "http://www.yahoo.com/",
-    "@yahoo.com.cn": "http://www.yahoo.com/",
-    "@yahoo.com.tw": "http://www.yahoo.com/",
-    "@yahoo.com.hk": "http://www.yahoo.com/",
-    "@yahoo.com.vn": "http://www.yahoo.com/",
+    "@yahoo.com": "https://login.yahoo.com/",
+    "@yahoo.cn": "https://login.yahoo.com/",
+    "@yahoo.com.cn": "https://login.yahoo.com/",
+    "@yahoo.com.tw": "https://login.yahoo.com/",
+    "@yahoo.com.hk": "https://login.yahoo.com/",
+    "@yahoo.com.vn": "https://login.yahoo.com/",
     "@yahoo.co.jp": "https://login.yahoo.co.jp/config/login",
     "@live.com": "https://outlook.live.com/",
     "@outlook.com": "https://outlook.live.com/",
@@ -95,5 +95,6 @@
     "@lzu.edu.cn": "http://www.lzu.edu.cn/",
     "@ustc.edu.cn": "http://mail.ustc.edu.cn/",
     "@mail.ustc.edu.cn": "http://mail.ustc.edu.cn/",
-    "@ah.ustc.edu.cn": "http://mail.ustc.edu.cn/"
+    "@ah.ustc.edu.cn": "http://mail.ustc.edu.cn/",
+    "@ualberta.ca": "https://ualberta.ca/"
 }
