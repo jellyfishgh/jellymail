@@ -24,8 +24,25 @@
             .append($('<div>'), { className: 'reminder', css: { display: feed.userremind ? 'inline' : 'none' } })
             .append($('<p>'), { text: feed.content, className: 'feedContent' })
             .append($('<p>'), { text: feed.createTime, className: 'feedDate' })
-            .append($('<p>'), { text: '回复(' + feed.answer_num + ')', className: 'feedAnswerNum' });
+            .append($('<p>'), { text: '回复(' + feed.answer_num + ')', className: 'feedAnswerNum' })
+            .on('tap', function(){
+                renderFeedDetail(feed.id);
+            });
     }
+    function renderFeedDetail(id) {
+        var pathname = '/feedDetail?id=' + id; 
+        window.history.pushState(null, null, pathname);
+    }
+    function route(pathname) {
+        switch(pathname){
+        }
+    }
+    window.onpopstate = function (event) {
+        route(document.location.pathname);
+    }
+    $('#').on(tap, function(){
+        renderPostFeedView();
+    });
 })(window.Zepto, 'http://192.168.191.94:8077', window.localStorage || {});
 
 /*
