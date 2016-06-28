@@ -82,6 +82,7 @@
     "@facebook.com": "http://facebook.com/",
     "@mail.com": "http://www.mail.com/int/",
     "@naver.com": "https://nid.naver.com/nidlogin.login",
+    "@yandex.com": "https://mail.yandex.com/",
     "@libero.it": "https://login.libero.it/",
     "@blu.it": "https://login.libero.it/",
     "@giallo.it": "https://login.libero.it/",
