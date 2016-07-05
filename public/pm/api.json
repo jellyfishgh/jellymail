@@ -1,0 +1,5 @@
+{
+    "registUrl": ["http://abc.com", "http.xyz.com"],
+    "loginUrl": ["http://123.com"],
+    "getPwd": ["http://456.com"]
+}
