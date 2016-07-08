@@ -3,48 +3,8 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>战盟 app 更新记录</title>
-    <style>
-        html,
-        body,
-        div,
-        ul,
-        li,
-        label {
-            padding: 0;
-            margin: 0;
-        }
-        
-        ul,
-        li {
-            list-style: none;
-        }
-        
-        .container {
-            min-width: 200px;
-            width: 80%;
-            margin: 20px auto;
-        }
-        
-        .divSection {
-            margin: 20px auto;
-        }
-        
-        .liItem {
-            margin: 5px 30px;
-        }
-        
-        .submitWebBtn {
-            display: block;
-            width: 60px;
-            margin: 0 auto;
-        }
-        
-        .msgForm input {
-            display: block;
-            margin-bottom: 5px;
-        }
-    </style>
+    <title>app 更新记录管理</title>
+    <link rel="stylesheet" href="/static/css/master.css">
 </head>
 
 <body>
@@ -62,14 +22,16 @@
         </form>
         <input type="submit" value="提交" class="submitWebBtn" id="msgSubmitBtn" />
     </div>
+    <script src='/static/js/master.js'></script>
     <script>
         var container = $("container");
-
         $("msgSubmitBtn").onclick = function(e) {
-            var titleValue = $("title").value, descValue = $("desc").value, versionValue = $("versionInput").value;
-            if(titleValue && descValue && versionValue){
+            var titleValue = $("title").value,
+                descValue = $("desc").value,
+                versionValue = $("versionInput").value;
+            if (titleValue && descValue && versionValue) {
                 postData('/msg', {
-                    platform: getRadioValue(),
+                    platform: getRadioValue('platform'),
                     version: versionValue,
                     title: titleValue,
                     desc: descValue
@@ -81,88 +43,16 @@
             } else {
                 alert("请输入版本号，标题和摘要");
                 return;
-            }            
-        };
-
-        function createEle(name, attrObj) {
-            var ele = document.createElement(name);
-            for (var key in attrObj) {
-                ele[key] = attrObj[key];
-            };
-            return ele;
-        }
-
-        function $(id) {
-            return document.getElementById(id);
-        }
-
-        function getRadioValue() {
-            var radios = document.getElementsByName("platform");
-            for (i = 0; i < radios.length; i++) {
-                if (radios[i].checked) {
-                    return radios[i].value;
-                }
             }
-        }
-
-        function createSection() {
-            var divSection = createEle("div", {
-                className: "divSection",
-                id: "divSection"
-            });
-
-            var typeInput = createEle("input", {
-                className: "typeInput",
-                id: "typeInput",
-                placeholder: "请输入记录类别",
-                type: "text",
-                size: "20"
-            });
-            divSection.appendChild(typeInput);
-
-            var addSectionBtn = createEle("button", {
-                className: "addSectionBtn",
-                id: "addSectionBtn",
-                innerHTML: "+"
-            });
-            addSectionBtn.onclick = function(e) {
-                divSection.removeChild(e.target);
-                addSection();
-            };
-            divSection.appendChild(addSectionBtn);
-
-            var ulItems = createEle("ul", {
-                className: "ulItems"
-            });
-            ulItems.appendChild(createItem(ulItems));
-            divSection.appendChild(ulItems);
-
-            return divSection;
-        }
-
-        function createItem(ulItems) {
-            var liItem = createEle("li", {
-                className: "liItem"
-            });
-            liItem.appendChild(createEle("input", {
-                placeholder: "请输入该类别的记录项",
-                size: "100"
-            }));
-            liItem.appendChild(createEle("button", {
-                className: "addItemBtn",
-                id: "addItemBtn",
-                innerHTML: "+",
-                onclick: function(e) {
-                    liItem.removeChild(e.target);
-                    ulItems.appendChild(createItem(ulItems));
-                }
-            }));
-            return liItem;
-        }
-
-        function addSection() {
-            container.insertBefore(createSection(), $("submitWebBtn"));
-        }
+        };
+        var submitWebBtn = createEle("button", {
+            id: "submitWebBtn",
+            className: "submitWebBtn",
+            innerHTML: "提交",
+            onclick: submitWebHandler
+        });
+        container.appendChild(submitWebBtn);
+        addSection('请输入类别', '请输入该类别下的子项');
 
         function submitWebHandler() {
             var api = '/history';
@@ -197,56 +87,6 @@
                 alert("提交失败");
             });
         }
-
-        function getContents() {
-            var contens = [];
-            var nodes = container.childNodes;
-            for (var i = 0; i < nodes.length - 1; i++) {
-                var node = nodes[i];
-                var type = node.firstChild.value;
-                if (type) {
-                    contens.push({
-                        name: type,
-                        itmes: getItems(node.lastChild.childNodes)
-                    });
-                }
-            }
-            return contens;
-        }
-
-        function getItems(lis) {
-            var items = [];
-            for (var i = 0; i < lis.length; i++) {
-                var itemText = lis[i].firstChild.value;
-                if (itemText) items.push(itemText);
-            }
-            return items;
-        }
-
-        function postData(api, data, resolve, reject) {
-            var xhr = new XMLHttpRequest();
-            xhr.open('POST', api);
-            xhr.onreadystatechange = function() {
-                if (this.readyState == 4) {
-                    if (this.status == 200) {
-                        resolve(this.response);
-                    } else {
-                        reject();
-                    }
-                }
-            };
-            xhr.setRequestHeader('Content-Type', 'application/json');
-            xhr.send(JSON.stringify(data));
-        }
-
-        var submitWebBtn = createEle("button", {
-            id: "submitWebBtn",
-            className: "submitWebBtn",
-            innerHTML: "提交",
-            onclick: submitWebHandler
-        });
-        container.appendChild(submitWebBtn);
-        addSection();
     </script>
 </body>
 

@@ -1,45 +1,12 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
+
 <head>
     <meta charset="UTF-8">
-    <title>战盟 app 接口</title>
-     <style>
-        html,
-        body,
-        div,
-        ul,
-        li,
-        label {
-            padding: 0;
-            margin: 0;
-        }
-        
-        ul,
-        li {
-            list-style: none;
-        }
-        
-        .container {
-            min-width: 200px;
-            width: 80%;
-            margin: 20px auto;
-        }
-        
-        .divSection {
-            margin: 20px auto;
-        }
-        
-        .liItem {
-            margin: 5px 30px;
-        }
-        
-        .submitWebBtn {
-            display: block;
-            width: 60px;
-            margin: 0 auto;
-        }
-    </style>
+    <title>app 接口管理</title>
+    <link rel="stylesheet" href="/static/css/master.css">
 </head>
+
 <body>
     <label for="iosRadio">iOS</label>
     <input type="radio" name="platform" value="iOS" id="iosRadio" checked="checked" />
@@ -48,109 +15,39 @@
     <div id="container" class="container">
         <div class="loading center" id="loadingView"></div>
     </div>
+    <script src='/static/js/master.js'></script>
     <script>
         var container = $("container");
+        getRemoteApi('iOS');      
+        var submitWebBtn = createEle("button", {
+            id: "submitWebBtn",
+            className: "submitWebBtn",
+            innerHTML: "提交",
+            onclick: submitWebHandler
+        });
+        container.appendChild(submitWebBtn);
+        addSection('请输入key', '请输入value');
 
-        getRemoteApi('iOS');
+        function getRemoteApi(platform) {
+            fetchData('/api?platform=' + platform, function(api) {
+                for (var key in api) {
+                    console.log(key, api[key]);
+                    // var values = api[key];
+                    // for (var i = 0; i < values.length; i++) {
 
-        function getRemoteApi(platform){
-            fetchData('/api?platform=' + platform, function(data){
-                var api = data.api;
-                for(var key in api){
-                    var values = api[key];
-                    for(var i = 0; i < values.length; i++){
-                        
-                    }
+                    // }
                 }
             }, function(){
+                alert("网络错误，请稍后重试");
+            }, function() {
                 $('loadingView').style.display = 'none';
             });
         }
-
-        function createEle(name, attrObj) {
-            var ele = document.createElement(name);
-            for (var key in attrObj) {
-                ele[key] = attrObj[key];
-            };
-            return ele;
-        }
-
-        function $(id) {
-            return document.getElementById(id);
-        }
-
-        function getRadioValue() {
-            var radios = document.getElementsByName("platform");
-            for (i = 0; i < radios.length; i++) {
-                if (radios[i].checked) {
-                    return radios[i].value;
-                }
-            }
-        }
-
-        function createSection() {
-            var divSection = createEle("div", {
-                className: "divSection",
-                id: "divSection"
-            });
-
-            var typeInput = createEle("input", {
-                className: "typeInput",
-                id: "typeInput",
-                placeholder: "请输入key",
-                type: "text",
-                size: "20"
-            });
-            divSection.appendChild(typeInput);
-
-            var addSectionBtn = createEle("button", {
-                className: "addSectionBtn",
-                id: "addSectionBtn",
-                innerHTML: "+"
-            });
-            addSectionBtn.onclick = function(e) {
-                divSection.removeChild(e.target);
-                addSection();
-            };
-            divSection.appendChild(addSectionBtn);
-
-            var ulItems = createEle("ul", {
-                className: "ulItems"
-            });
-            ulItems.appendChild(createItem(ulItems));
-            divSection.appendChild(ulItems);
-
-            return divSection;
-        }
-
-        function createItem(ulItems) {
-            var liItem = createEle("li", {
-                className: "liItem"
-            });
-            liItem.appendChild(createEle("input", {
-                placeholder: "请输入 value",
-                size: "100"
-            }));
-            liItem.appendChild(createEle("button", {
-                className: "addItemBtn",
-                id: "addItemBtn",
-                innerHTML: "+",
-                onclick: function(e) {
-                    liItem.removeChild(e.target);
-                    ulItems.appendChild(createItem(ulItems));
-                }
-            }));
-            return liItem;
-        }
-
-        function addSection() {
-            container.insertBefore(createSection(), $("submitWebBtn"));
-        }
-
+        
         function submitWebHandler() {
             var api = '/api';
             var data = {
-                'platform': getRadioValue(),
+                'platform': getRadioValue('platform'),
                 'api': getApi()
             };
             postData(api, data, function(resData) {
@@ -159,66 +56,7 @@
                 alert("提交失败");
             });
         }
-
-        function getApi() {
-            var api = {};
-            var nodes = container.childNodes;
-            for (var i = 0; i < nodes.length - 1; i++) {
-                var node = nodes[i];
-                var key = node.firstChild.value;
-                if(key)api[key] = getItems(node.lastChild.childNodes);
-            }
-            return api;
-        }
-
-        function getItems(lis) {
-            var items = [];
-            for (var i = 0; i < lis.length; i++) {
-                var itemText = lis[i].firstChild.value;
-                if (itemText) items.push(itemText);
-            }
-            return items;
-        }
-
-        function postData(api, data, resolve, reject) {
-            var xhr = new XMLHttpRequest();
-            xhr.open('POST', api);
-            xhr.onreadystatechange = function() {
-                if (this.readyState == 4) {
-                    if (this.status == 200) {
-                        resolve(this.response);
-                    } else {
-                        reject();
-                    }
-                }
-            };
-            xhr.setRequestHeader('Content-Type', 'application/json');
-            xhr.send(JSON.stringify(data));
-        }
-
-        function fetchData(url, resolve, reject){
-            var xhr = new XMLHttpRequest();
-            xhr.open('GET', url);
-            xhr.onreadystatechange = function() {
-                if (this.readyState == 4) {
-                    if (this.status == 200) {
-                        resolve(JSON.stringify(this.responseText));
-                    } else {
-                        reject();
-                    }
-                }
-            };
-            xhr.send();
-        }
-
-        var submitWebBtn = createEle("button", {
-            id: "submitWebBtn",
-            className: "submitWebBtn",
-            innerHTML: "提交",
-            onclick: submitWebHandler
-        });
-        container.appendChild(submitWebBtn);
-        addSection();
     </script>
 </body>
+
 </html>
