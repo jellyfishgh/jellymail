@@ -41,6 +41,7 @@
     "@yahoo.com.hk": "https://login.yahoo.com/",
     "@yahoo.com.vn": "https://login.yahoo.com/",
     "@yahoo.co.jp": "https://login.yahoo.co.jp/config/login",
+    "@ymail.com":"https://login.yahoo.co.jp/config/login",
     "@live.com": "https://outlook.live.com/",
     "@outlook.com": "https://outlook.live.com/",
     "@hotmail.com": "https://outlook.live.com/",
