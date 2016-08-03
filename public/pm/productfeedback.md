@@ -81,15 +81,23 @@
 
 ## 20160804
 
-## iOS
+### iOS 1.1.5.01
 
-1.插入耳机播放视频或直播时,拔掉耳机后暂停播放
+1. 插入耳机播放视频或直播时,拔掉耳机后暂停播放
 
-## 网页盟友圈
+### 盟友圈_0803
 
-- PC上设置了头像,在战盟服上保存了这个记录,但是<<个人头像>>相册中没有显示
-[本地图片的引用][]
+1. PC上设置了头像,在战盟服上保存了这个记录,但是<<个人头像>>相册中没有显示
 
-## 游戏内盟友圈
+![电脑客户端设置头像](http://localhost:3001/productfeedback/PCHead.png)
+![个人头像相册](http://localhost:3001/productfeedback/HeadPhoto.png)
 
-- [骰子]和[猜拳]两个表情怎么统一?
+1. [骰子]和[猜拳]在游戏内能发送也能显示,建议网页上也显示
+
+![骰子和猜拳](http://localhost:3001/productfeedback/touzi&caiquan.png)
+
+### PC 战盟_0.5.73
+
+1. 选择Bing墙纸作为头像时弹出失败的提示
+
+![设置头像](http://localhost:3001/productfeedback/SetHead.png)
