@@ -1,0 +1,13 @@
+graph TD;
+  A-->B;
+  A-->C;
+  B-->D;
+  c-->D;
+
+
+  [时序图](http://knsv.github.io/mermaid/sequenceDiagram.html)
+
+  ``` mermaid
+  graph LR
+  A --> B
+  ```
