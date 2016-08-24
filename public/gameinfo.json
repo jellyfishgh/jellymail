@@ -1,0 +1,47 @@
+[
+    {
+        "name": "梦想世界",
+        "productid": "mx",
+        "codeid": 1,
+        "publicid": 59973533,/*对应的公众号id;0:没有公众号*/
+        "devstatus": 1,/*0:未发布,1:正在运营,2:停止运营*/
+        "os": ["PC"],/*pc:端游, ios:iOS手游, android:安卓手游, wp:Windows Phone手游, web:页游*/
+        "desc": "策略PK回合制网游",        
+        "grouptype": 1,/*0:不出现出现在群分类,1:出现在群分类*/
+        "hasDiscuss": 1,/*0:没有讨论组,1:有讨论组*/
+        "hasMainArea": 1,/*0:没有开通专区,1:开通专区*/
+        "logoUrl": "",
+        "groupBgUrl": "",
+        "onlineIconUrl": "",
+        "historyUrl": "",
+        "dlUrl": "",
+        "homeUrl":""
+    },
+    {
+        "name": "神武2",
+        "productid": "sw",
+        "codeid": "2",
+        "devstatus": 1,
+        "os": ["PC"],
+        "desc": "国民级免费回合网游"
+    },
+    {
+        "name": "巨龙大陆",
+        "productid": "jl",
+        "codeid": "3",
+        "devstatus": 2
+    },
+    {
+        "name": "星剑传说",
+        "productid": "sw",
+        "codeid": "2",
+        "devstatus": 1
+    },
+    {
+        "name": "梦想帝王",
+        "productid": "sw",
+        "codeid": "2",
+        "devstatus": 1,
+        "os": ["PC", "iOS", "Android"]
+    }
+]
