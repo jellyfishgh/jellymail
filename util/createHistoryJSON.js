@@ -1,7 +1,7 @@
-var fs = require('fs');
-var path = require('path');
+const fs = require('fs');
+const path = require('path');
 
-var file = '../public/pm/history.md';
+var file = path.join(__dirname, '../public/pm/history.md');
 
 fs.readFile(file, function(err, data){
     if(err) throw err;

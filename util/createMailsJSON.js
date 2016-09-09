@@ -1,26 +1,28 @@
-var fs = require('fs');
+const fs = require('fs');
+const path = require('path');
 
 function createMailsJson(mailsFile) {
+    console.log(mailsFile);
     fs.readFile(mailsFile, function(err, data) {
         if (err) throw err;
-        var arr = data.toString().trim().split("\r\n\r\n");
+        var arr = data.toString().trim().split('\r\n\r\n');
         var obj = {};
         var start = new Date(2015, 11, 24); //月份：0-11
         for (var i = 0; i < arr.length; i++) {
             var now = new Date(start.getTime() + i * 86400000);
-            var value = arr[i].split("\r\n");
+            var value = arr[i].split('\r\n');
             var key = formatDate(now);
             obj[key] = value;
         }
-        fs.writeFile('../public/mails.json', JSON.stringify(obj, censor, '\t'), (err) => {
+        fs.writeFile(path.join(__dirname, '../public/mails.json'), JSON.stringify(obj, censor, '\t'), (err) => {
             if (err) throw err;
-            console.log("mails.json created");
+            console.log('mails.json created');
         });
     });
 }
 
 function censor(key, value) {
-    if(value.length === 1 && value[0] === "")return [];
+    if(value.length === 1 && value[0] === '')return [];
     else return value;
 }
 
@@ -34,4 +36,5 @@ function formatDate(now) {
     return year + month + date;
 }
 
-createMailsJson('../public/mails');
+// __dirname:指的是当前文件的路径,而非执行node命令时的路径
+createMailsJson(path.join(__dirname, '../public/mails'));

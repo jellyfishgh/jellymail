@@ -1,7 +1,8 @@
-var fs = require('fs');
+const fs = require('fs');
+const path = require('path');
 
-fs.readFile('./public/primer_dataset.json', function(err, data){
-   if(err) throw err;
-   var obj = JSON.parse(data);
-   console.log(obj.length); 
+fs.readFile(path.join(__dirname, '../public/primer_dataset.json'), (err, data) => {
+    if (err) throw err;
+    var obj = JSON.parse(data);
+    console.log(obj.length);
 });
